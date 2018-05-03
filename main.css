@@ -166,6 +166,14 @@ main {
   width: 100%;
   position: relative;
   background-image: url("./images/dog.jpg");
+  background-image: -webkit-image-set(  
+    url(./images/dog_960.jpg) 1x,  
+    url(./images/dog_1200.jpg) 2x  
+  );  
+  background-image: image-set(  
+    url(./images/dog_960.jpg) 1x,  
+    url(./images/dog_1200.jpg) 2x  
+  );
   background-size: cover;
   /* height: 300px; */
 }
@@ -260,6 +268,10 @@ main {
 
 .scores__table tr:nth-child(even) td {
   background-color: #eceff1;
+}
+
+.scores__table .scores_location {
+  display: none;
 }
 
 .scores__table td.winner {
@@ -430,6 +442,9 @@ footer a {
   .hero {
     width: 100%;
     height: 300px;
+  }
+  .scores__table .scores_location {
+    display: block;
   }
 }
 

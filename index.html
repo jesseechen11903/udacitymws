@@ -18,16 +18,16 @@
       <h1 class="header__title">
         The Brighton Times
       </h1>
-      
+
       <a id="menu" class="header_menu">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
           <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z" />
         </svg>
       </a>
-    
-    <!-- psuedo element -->
+
+      <!-- psuedo element -->
       <!-- <a id="menu" class="box-shadow-menu"/> -->
-    <!--
+      <!--
     <a href="#menu" class"unicode_menu">&#9776</a>
     -->
     </div>
@@ -85,6 +85,7 @@
           <thead>
             <tr>
               <th>date</th>
+              <th class="scores_location">location</th>
               <th>team</th>
               <th colspan="2">score</th>
               <th>team</th>
@@ -93,6 +94,7 @@
           <tbody>
             <tr>
               <td>Friday</td>
+              <td class="scores_location">Brighton</td>
               <td>Bears</td>
               <td>95</td>
               <td class="winner">109</td>
@@ -100,6 +102,7 @@
             </tr>
             <tr>
               <td>Friday</td>
+              <td class="scores_location">Worthington</td>
               <td class="winner">Otters</td>
               <td class="winner">3</td>
               <td>1</td>
@@ -107,6 +110,7 @@
             </tr>
             <tr>
               <td>Saturday</td>
+              <td class="scores_location">Littlehampton</td>
               <td class="winner">Wolves</td>
               <td class="winner">7</td>
               <td>0</td>
@@ -114,6 +118,7 @@
             </tr>
             <tr>
               <td>Sunday</td>
+              <td class="scores_location">Portslade</td>
               <td>Hawks</td>
               <td>11</td>
               <td class="winner">12</td>
@@ -121,6 +126,7 @@
             </tr>
             <tr>
               <td>Sunday</td>
+              <td class="scores_location">Hove</td>
               <td class="winner">Stags</td>
               <td class="winner">6</td>
               <td>2</td>
@@ -174,7 +180,10 @@
         </h2>
         <ul>
           <li class="snippet">
-            <img class="snippet__thumbnail" src="images/dog.jpg" alt="picture of a girl with a large, stuffed dog toy">
+            <picture>
+              <source srcset="images/dog_420.jpg 1x, images/dog_960.jpg 2x" media="(min-width: 0px)">
+              <img class="snippet__thumbnail" src="images/dog.jpg" srcset="images/dog.jpg 2x" alt="picture of a girl with a large, stuffed dog toy">
+            </picture>
             <h3 class="snippet__title">
               <a href="#">Gastropub distillery Marfa farm-to-table</a>
             </h3>
@@ -186,7 +195,10 @@
             </p>
           </li>
           <li class="snippet">
-            <img class="snippet__thumbnail" src="images/dog.jpg" alt="picture of a girl with a large, stuffed dog toy">
+            <picture>
+              <source srcset="images/dog_420.jpg 1x, images/dog_960.jpg 2x" media="(min-width: 0px)">
+              <img class="snippet__thumbnail" src="images/dog.jpg" srcset="images/dog.jpg 2x" alt="picture of a girl with a large, stuffed dog toy">
+            </picture>
             <h3 class="snippet__title">
               <a href="#">Organic raw keffiyeh four loko.</a>
             </h3>
@@ -195,7 +207,10 @@
             </p>
           </li>
           <li class="snippet">
-            <img class="snippet__thumbnail" src="images/dog.jpg" alt="picture of a girl with a large, stuffed dog toy">
+            <picture>
+              <source srcset="images/dog_420.jpg 1x, images/dog_960.jpg 2x" media="(min-width: 0px)">
+              <img class="snippet__thumbnail" src="images/dog.jpg" srcset="images/dog.jpg 2x" alt="picture of a girl with a large, stuffed dog toy">
+            </picture>
             <h3 class="snippet__title">
               <a href="#">Kickstarter art party cronut scenester.</a>
             </h3>
@@ -205,7 +220,22 @@
             </p>
           </li>
           <li class="snippet">
-            <img class="snippet__thumbnail" src="images/dog.jpg" alt="picture of a girl with a large, stuffed dog toy">
+            <!--
+            <picture>
+                <source srcset="images/dog_1500.jpg 1x, images/dog.jpg 2x" media="(min-width: 1500px)">
+                <source srcset="images/dog_1200.jpg 1x, images/dog.jpg 2x" media="(min-width: 1200px)">
+                <source srcset="images/dog_960.jpg 1x, images/dog.jpg 2x" media="(min-width: 960px)">
+                <source srcset="images/dog_600.jpg 1x, images/dog_1200.jpg 2x" media="(min-width: 600px)">
+                <source srcset="images/dog_420.jpg 1x, images/dog_960.jpg 2x" media="(min-width: 420px)">
+                <source srcset="images/dog_420.jpg 1x, images/dog_960.jpg 2x" media="(min-width: 0px)">
+                <img class="snippet__thumbnail" src="images/dog.jpg" srcset="images/dog.jpg 2x" alt="picture of a girl with a large, stuffed dog toy">
+            </picture>
+          -->
+            <picture>
+              <source srcset="images/dog_420.jpg 1x, images/dog_960.jpg 2x" media="(min-width: 420px)">
+              <source srcset="images/dog_420.jpg 1x, images/dog_960.jpg 2x" media="(min-width: 0px)">
+              <img class="snippet__thumbnail" src="images/dog.jpg" srcset="images/dog.jpg 2x" alt="picture of a girl with a large, stuffed dog toy">
+            </picture>
             <h3 class="snippet__title">
               <a href="#">Squid lomo Kickstarter art party cronut </a>
             </h3>
@@ -236,11 +266,11 @@
     var main = document.querySelector('main');
     var drawer = document.querySelector('.nav');
 
-    menu.addEventListener('click', function(e) {
+    menu.addEventListener('click', function (e) {
       drawer.classList.toggle('open');
-    	e.stopPropagation();
+      e.stopPropagation();
     });
-    main.addEventListener('click', function() {
+    main.addEventListener('click', function () {
       drawer.classList.remove('open');
     });
   </script>
